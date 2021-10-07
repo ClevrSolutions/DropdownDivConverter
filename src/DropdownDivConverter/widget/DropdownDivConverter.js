@@ -305,7 +305,8 @@ define([
         },
 
         _executeCallback: function (cb, from) {
-            logger.debug(this.id + "._executeCallback" + (from ? " from " + from : ""));
+            var loggerObj = (mx && mx.logger) ? mx.logger : logger;
+            loggerObj.debug(this.id + "._executeCallback" + (from ? " from " + from : ""));
             if (cb && typeof cb === "function") {
                 cb();
             }
